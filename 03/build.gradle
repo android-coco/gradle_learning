@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+task printStringClass << {
+    def str1 = '单引号';//String
+    def str2 = "双引号";//String
+    def str3 = '张三';//String
+    def numlist = [1,2,3,4,5,6];//ArrayList
+
+    println  "单引号定义的字符串类型：" + str1.getClass().name;
+    println  "双引号定义的字符串类型：" + str2.getClass().name;
+
+
+
+    println  '单引号的变量计算：${str3}';
+    println  "单引号的变量计算：${str3}";
+
+   
+    println "numlist类型:" + numlist.getClass().name;
+
+    println numlist[1];//访问第二个元素
+    println numlist[-1];//访问最后一个元素
+}
