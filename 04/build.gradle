@@ -1,0 +1,52 @@
+apply plugin: 'java'
+
+task method1 << {
+    //调用
+    method1(111);
+    method1("111");
+    println "${add(1,2)} -----${add(2,1)}";
+    println "${add 1,2} -----${add 2,1}";
+    a({println it});
+    eachMap({a1,b1 -> println "${a1} is ${b1} "});
+    Person person = new Person();
+    println "${person.name}";
+    person.name = "afasdfa";
+    println "${person.name}";
+}
+//方法
+def method1(a)
+{
+	println "${a}";
+}
+
+def add(int a, int b)
+{
+	if(a < b)
+	{
+		a+b;
+	}
+	else
+	{
+	 	a -b;
+	}
+}
+
+//闭包1参数
+ def a(c){
+    for(int i in 1..10) {
+            c(i);
+      }
+}
+
+def eachMap(x)
+{
+	def map1 = ["name":"张三","age":18];
+	map1.each{
+		x(it.key,it.value);
+	}
+}
+
+class Person
+{
+	private String name;
+}

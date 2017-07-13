@@ -22,8 +22,10 @@ task printStringClass << {
     println numlist[-2];//访问倒数第二个元素
     println numlist[1..3];//访问第二个到第四个元素
     //循环
+    // numlist.each({println it});
+    // numlist.each(){println it;}
     numlist.each 
     {
-        println it; 
+       println it; 
     }
 }
